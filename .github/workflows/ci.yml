@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-test:
@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-	with:
-	  fetch-depth: 0
+        with:
+          fetch-depth: 0
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -27,12 +27,11 @@ jobs:
         run: mvn -B clean test
 
       - name: SonarCloud Scan
-        run: mvn -B -DskipTests verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-        -Dsonar.projectKey=vmmorales-gif \
-        -Dsonar.organization=vmmorales-gif \
-        -Dsonar.host.url=https://sonarcloud.io \
-        -Dsonar.token=${{ secrets.SONAR_TOKEN }}
-
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+          -Dsonar.projectKey=vmmorales-gif \
+          -Dsonar.organization=vmmorales-gif \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
       - name: Package
         run: mvn -B -DskipTests package
