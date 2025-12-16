@@ -29,7 +29,7 @@ jobs:
       - name: SonarCloud Scan
         run: |
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-            -Dsonar.projectKey=sonar.issues.defaultAssigneeLogin \
+            -Dsonar.projectKey=vmmorales-gif_practica4-ci \
             -Dsonar.organization=vmmorales-gif \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }}
