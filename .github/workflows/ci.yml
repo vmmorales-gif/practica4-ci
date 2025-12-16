@@ -26,8 +26,8 @@ jobs:
 
       - name: SonarCloud Scan
         run: mvn -B verify sonar:sonar \
-          -Dsonar.projectKey=TU_PROJECT_KEY \
-          -Dsonar.organization=TU_ORG \
+          -Dsonar.projectKey=vmmorales-gif \
+          -Dsonar.organization=vmmorales-gif \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
