@@ -27,12 +27,12 @@ jobs:
         run: mvn -B clean test
 
       - name: SonarCloud Scan
-        run: | 
-	 mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-          -Dsonar.projectKey=vmmorales-gif \
-          -Dsonar.organization=vmmorales-gif \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+        run: |
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+            -Dsonar.projectKey=vmmorales-gif \
+            -Dsonar.organization=vmmorales-gif \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
       - name: Package
         run: mvn -B -DskipTests package
