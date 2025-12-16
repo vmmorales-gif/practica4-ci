@@ -3,6 +3,8 @@ package org.ejemplo.musica;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
+import org.junit.jupiter.api.Disabled;
+
 
 /**
  * Tests para el servicio de música.
@@ -74,24 +76,25 @@ public class ServicioMusicaTests {
     }
 
     // ---------- FALLOS INTENCIONALES (4) ----------
+    @Disabled("Fallo intencional para la práctica de CS")
     @Test
     void testGetTitulo_equals_fail_intencional() {
         // FAIL intencional: case distinto
         assertEquals("bohemian rhapsody", c1.getTitulo());
     }
-
+    @Disabled("Fallo intencional para la práctica de CS")
     @Test
     void testPlaylist_contains_fail_intencional() {
         // FAIL intencional: p no contiene c2
         assertTrue(p.getCanciones().contains(c2));
     }
-
+    @Disabled("Fallo intencional para la práctica de CS")
     @Test
     void testTamanyo_fail_intencional() {
         // FAIL intencional: p.tamanyo() == 1, comprobamos lo contrario
         assertFalse(p.tamanyo() == 1);
     }
-
+    @Disabled("Fallo intencional para la práctica de CS")
     @Test
     void testNull_fail_intencional() {
         // FAIL intencional: buscarPorArtista devuelve lista vacía, no null
